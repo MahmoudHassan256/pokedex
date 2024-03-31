@@ -41,7 +41,7 @@
 <h2>Tools and Resources</h2>
 
 <ul>
-  <li><strong>Design Link:</strong> Provide link to the design of the project</li>
+  <li><strong>Design Link:</strong> <a href="https://www.figma.com/file/vD1GXGZdW3SKRXnSyUAhId/Pokedex?type=design&node-id=0-1&mode=design&t=vMpS0os9l2TueEvS-0"></a></li>
   <li><strong>React Hooks:</strong> Utilize React Hooks for managing state and side effects.</li>
   <li><strong>Fetch Data from API with useEffect:</strong> Use the useEffect hook to fetch data from the API.</li>
 </ul>
