@@ -1,0 +1,72 @@
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
+  
+  .simple_card {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+        border-radius: 1rem;
+    background-color: #f7f7f9;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .img-div-s {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .poke-img-s {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    aspect-ratio: 1;
+    width: 100%;
+  }
+  
+  .id-num-s {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 1rem;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    color: #373299;
+  }
+  
+  .name-sec {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .name-s {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #373299;
+    width: 100%;
+    padding-top: 0.5rem;
+    margin-top: 0;
+    margin-left: 0;
+  }

@@ -1,0 +1,17 @@
+.homepageWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.pokemonsContainer{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns:repeat(4 , 1fr) ;
+    align-items: center;
+    padding:0 109px;
+    width: 100%;
+    gap:32px;
+    margin:14px 0 80px;
+}
