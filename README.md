@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Pokedex</h1>
 
-## Available Scripts
+<p><strong>Organization:</strong> Skills Academy Ltd.</p>
 
-In the project directory, you can run:
+<p><strong>Location:</strong> 1 Har Sinai St., Tel Aviv-Yafo, Israel</p>
 
-### `npm start`
+<h2>Project Overview</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>The Pokedex project is a web application designed to interface with the PokeAPI to retrieve information about the first 20 Pokémon and display them to users in the form of cards on the main page. Users can click on a specific Pokémon card to view additional details on an inner page. Additionally, there is a "Load More" button at the bottom of the main page to fetch the next 20 Pokémon, implementing pagination functionality.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Technologies Used</h2>
 
-### `npm test`
+<ul>
+  <li><strong>React:</strong> The project is implemented using React, a JavaScript library for building user interfaces.</li>
+  <li><strong>CSS:</strong> All styling is done using CSS without relying on any component libraries.</li>
+</ul>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2>Task Breakdown</h2>
 
-### `npm run build`
+<ol>
+  <li><strong>Project Planning:</strong> The project is divided into three parts. In the initial phase, a project plan is created, including a component distribution diagram and an architecture plan.</li>
+  <li><strong>Project Structure and Data Fetching:</strong> The project is initialized using React, and the components are structured according to the plan created in the first phase. Data is fetched from the PokeAPI to populate the components on both the main and inner pages.</li>
+  <li><strong>Design:</strong> The final phase involves adding design elements to the skeleton built in the previous phase. The goal is to make the project visually similar to the original design.</li>
+</ol>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2>Bonus Tasks</h2>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<ul>
+  <li><strong>Search Field:</strong> Implement a search field that filters Pokémon based on their names.</li>
+  <li><strong>Responsiveness:</strong> Ensure that the website is responsive and works well on mobile devices.</li>
+</ul>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2>Tools and Resources</h2>
 
-### `npm run eject`
+<ul>
+  <li><strong>Design Link:</strong> <a href="https://www.figma.com/file/vD1GXGZdW3SKRXnSyUAhId/Pokedex?type=design&node-id=0-1&mode=design&t=vMpS0os9l2TueEvS-0">https://www.figma.com/file/vD1GXGZdW3SKRXnSyUAhId/Pokedex?type=design&node-id=0-1&mode=design&t=vMpS0os9l2TueEvS-0</a></li>
+  <li><strong>React Hooks:</strong> Utilize React Hooks for managing state and side effects.</li>
+  <li><strong>Fetch Data from API with useEffect:</strong> Use the useEffect hook to fetch data from the API.</li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p>This project aims to provide an interactive and visually appealing interface for users to explore information about Pokémon while demonstrating proficiency in React development and API integration.</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</body>
+</html>
