@@ -8,11 +8,6 @@ export default function HomePage() {
   const { pokemons, filtered, loading, loadPokemons, filterByName, nextUrl } =
     usePokemon();
 
-  useEffect(() => {
-    loadPokemons();
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const handleSearch = (e) => {
     const value = e.target.value;
     setSearchQuery(value);
@@ -20,7 +15,10 @@ export default function HomePage() {
   };
 
   const visibleList = searchQuery ? filtered : pokemons;
-
+  useEffect(() => {
+    loadPokemons();
+    //eslint-disable-next-line
+  }, []);
   return (
     <div className="homepageWrapper">
       <input
@@ -32,7 +30,7 @@ export default function HomePage() {
       />
 
       <div className="pokemonsContainer">
-        {visibleList.map((pokemon,key) => (
+        {visibleList.map((pokemon, key) => (
           <SimpleCard key={key} pokemon={pokemon} />
         ))}
       </div>

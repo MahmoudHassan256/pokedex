@@ -19,9 +19,6 @@ function Header({ selected, setSelected, theme, toggleTheme }) {
           Favorites
         </button>
       </div>
-      <button className="themeBtn" onClick={toggleTheme}>
-        {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-      </button>
     </div>
   );
 }

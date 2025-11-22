@@ -68,9 +68,10 @@
 .fav-btn.active {
   color: gold;
 }
-
-.img-container {
-  background-image: url("/Images/Pokeball.svg"); /* Correct path from public */
+.img-container{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .img-container img {
   width: 120px;

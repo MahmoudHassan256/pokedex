@@ -11,6 +11,7 @@ export const usePokemon = (
 
   const loadPokemons = useCallback(async () => {
     if (!nextUrl || loading) return;
+
     setLoading(true);
     try {
       const res = await fetch(nextUrl);
@@ -22,19 +23,24 @@ export const usePokemon = (
       );
 
       setPokemons((prev) => [...prev, ...details]);
-      setNextUrl(data.next);
+      setNextUrl(data.next || null);
     } catch (err) {
       console.error(err);
     } finally {
       setLoading(false);
     }
-  }, [nextUrl, loading]);
+  }, [nextUrl, loading]); // dependencies correct
 
-  const filterByName = (query) => {
-    setFiltered(
-      pokemons.filter((p) => p.name.toLowerCase().includes(query.toLowerCase()))
-    );
-  };
+  const filterByName = useCallback(
+    (query) => {
+      setFiltered(
+        pokemons.filter((p) =>
+          p.name.toLowerCase().includes(query.toLowerCase())
+        )
+      );
+    },
+    [pokemons]
+  );
 
   return { pokemons, filtered, loading, loadPokemons, filterByName, nextUrl };
 };

@@ -25,7 +25,7 @@ function App() {
         theme={theme}
         toggleTheme={toggleTheme}
       />
-      <div>{screens[selected]}</div>
+      <div className="screenWrapper">{screens[selected]}</div>
     </FavoritesProvider>
   );
 }

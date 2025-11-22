@@ -3,46 +3,46 @@
   height: 76px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: var(--primary-color);
+  justify-content: center; 
+  position: relative; 
+  background-color: #020166;
   color: white;
   padding: 0 32px;
-  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.headerWrapper .logo {
+.headerWrapper img {
   height: 48px;
+  object-fit: contain;
+  position: absolute; 
+  left: 32px;
 }
 
 .headerButtons {
   display: flex;
-  gap: 10px;
+  height: 100%;
+  align-content: flex-end;
 }
 
 .headerButton {
-  position: relative;
-  padding: 12px 20px;
-  border-radius: 8px;
-  background: none;
-  border: none;
+  background-color: transparent;
   color: white;
-  font-weight: 500;
+  aspect-ratio: 1 / 1;
+  height: 100%;
   cursor: pointer;
-  transition: all 0.2s ease;
+  user-select: none;
+  border: none;
 }
 
 .headerButton:hover {
-  transform: scale(1.05);
+  background-color: #151483;
 }
 
 .headerButton.active {
-  color: black;
   background-color: #94d97e;
+  color: black;
 }
 
-.themeBtn {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+.headerButton.active:hover {
+  background-color: #7dc665;
 }

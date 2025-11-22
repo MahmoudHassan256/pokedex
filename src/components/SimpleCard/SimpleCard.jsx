@@ -10,7 +10,11 @@ export const SimpleCard = forwardRef(({ pokemon }, ref) => {
   const bgColor = TYPE_COLORS[primaryType];
 
   return (
-    <div className="simple_card_container" ref={ref}>
+    <div
+      className="simple_card_container"
+      ref={ref}
+      onClick={() => toggleFavorite(pokemon)}
+    >
       <div className="card_inner">
         {/* Front */}
         <div className="card_front" style={{ backgroundColor: bgColor }}>
@@ -18,14 +22,11 @@ export const SimpleCard = forwardRef(({ pokemon }, ref) => {
             <span className="poke-id">
               #{pokemon.id.toString().padStart(3, "0")}
             </span>
-            <button
-              className={`fav-btn ${isFavorite ? "active" : ""}`}
-              onClick={() => toggleFavorite(pokemon)}
-            >
-              {isFavorite ? "★" : "☆"}
-            </button>
           </div>
-          <div className="img-container">
+          <div
+            className="img-container"
+            style={{ backgroundImage: 'url("/Images/Pokeball.svg")' }}
+          >
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           </div>
           <h3 className="poke-name">{pokemon.name}</h3>
@@ -58,6 +59,9 @@ export const SimpleCard = forwardRef(({ pokemon }, ref) => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className={`fav-btn ${isFavorite ? "active" : ""}`}>
+            {isFavorite ? "★" : "☆"}
           </div>
         </div>
       </div>
