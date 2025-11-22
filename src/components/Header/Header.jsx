@@ -4,7 +4,7 @@ import "../Header/Header.css";
 function Header({ selected, setSelected, theme, toggleTheme }) {
   return (
     <div className="headerWrapper">
-      <img src="Images/HeaderTitle.png" alt="pokedex" className="logo" />
+      <img src="Images/HeaderTitle.svg" alt="pokedex" className="logo" />
       <div className="headerButtons">
         <button
           className={`headerButton ${selected === "home" ? "active" : ""}`}
