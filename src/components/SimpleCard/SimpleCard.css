@@ -1,0 +1,194 @@
+.simple_card_container {
+  width: 200px;
+  height: 260px;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+.card_inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.simple_card_container:hover .card_inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.card_front,
+.card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  color: white;
+}
+
+.card_front {
+  z-index: 2;
+}
+
+.card_back {
+  background: rgba(0, 0, 0, 0.85);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+/* Front */
+.card_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.poke-id {
+  font-weight: 600;
+  color: #ffffffcc;
+}
+
+.fav-btn {
+  font-size: 1.2rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+}
+
+.fav-btn.active {
+  color: gold;
+}
+
+.img-container {
+  background-image: url("/Images/Pokeball.svg"); /* Correct path from public */
+}
+.img-container img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.poke-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 8px 0;
+}
+
+.types {
+  display: flex;
+  gap: 6px;
+}
+
+.type-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: white;
+  border: white 1px solid;
+}
+
+/* Stats on back */
+.stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.stat-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+.stat-name {
+  font-size: 0.75rem;
+  margin-bottom: 2px;
+  text-transform: capitalize;
+}
+.stat-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffffcc;
+}
+.stat-bar {
+  width: 100%;
+  height: 6px;
+  background: #ffffff33;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: #94d97e;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Type badge colors */
+.type-badge.fire {
+  background: #f08030;
+}
+.type-badge.water {
+  background: #6890f0;
+}
+.type-badge.grass {
+  background: #78c850;
+}
+.type-badge.electric {
+  background: #f8d030;
+}
+.type-badge.ice {
+  background: #98d8d8;
+}
+.type-badge.fighting {
+  background: #c03028;
+}
+.type-badge.poison {
+  background: #a040a0;
+}
+.type-badge.ground {
+  background: #e0c068;
+}
+.type-badge.flying {
+  background: #a890f0;
+}
+.type-badge.psychic {
+  background: #f85888;
+}
+.type-badge.bug {
+  background: #a8b820;
+}
+.type-badge.rock {
+  background: #b8a038;
+}
+.type-badge.ghost {
+  background: #705898;
+}
+.type-badge.dark {
+  background: #705848;
+}
+.type-badge.dragon {
+  background: #7038f8;
+}
+.type-badge.steel {
+  background: #b8b8d0;
+}
+.type-badge.fairy {
+  background: #ee99ac;
+}
+.type-badge.normal {
+  background: #a8a878;
+}

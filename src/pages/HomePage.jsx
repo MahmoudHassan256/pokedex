@@ -1,91 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { SimpleCard } from "../components/SimpleCard/SimpleCard";
+import { usePokemon } from "../hooks/usePokemon";
 import "../styles/HomePage.css";
-import { SimpleCard } from "../components/SimpleCard";
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [url, setUrl] = useState(
-    "https://pokeapi.co/api/v2/pokemon?offset=0&limit=12"
-  );
-  const [pokemons, setPokemons] = useState([]);
-  const [filtered, setFiltered] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [filteredPokemons, setFilteredPokemons] = useState();
+  const { pokemons, filtered, loading, loadPokemons, filterByName, nextUrl } =
+    usePokemon();
 
-  const fetchPokemons = async () => {
-    try {
-      const data = await fetch(url).then((Response) => Response.json());
-      const allPokemons = [...pokemons, ...data.results];
-      setPokemons(allPokemons);
-
-      if (filtered) {
-        applyFilter(searchQuery, allPokemons);
-      }
-      if (data.next !== "") {
-        setUrl(data.next);
-      } else {
-        setUrl("");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    fetchPokemons();
+    loadPokemons();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handelLoadMore = async () => {
-    setLoading(true);
-    await fetchPokemons();
-    setLoading(false);
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    filterByName(value);
   };
-  const applyFilter = (searchQuery, pokemons) => {
-    setFilteredPokemons(
-      pokemons.filter((element) =>
-        element.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
-  };
-  const handelSearchSubmit = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim() === "") {
-      setFiltered(false);
-      setFilteredPokemons([]);
-    } else {
-      applyFilter(searchQuery, pokemons);
-      setFiltered(true);
-    }
-  };
-  const handelSearch = (e) => {
-    setSearchQuery(e.target.value);
-    if (e.target.value === "") {
-      setFiltered(false);
-    }
-  };
+
+  const visibleList = searchQuery ? filtered : pokemons;
+
   return (
     <div className="homepageWrapper">
-      <form onSubmit={handelSearchSubmit}>
-        <input type="text" value={searchQuery} onChange={handelSearch} />
-        <button type="submit">Search</button>
-      </form>
+      <input
+        type="text"
+        placeholder="Search Pokémon..."
+        value={searchQuery}
+        onChange={handleSearch}
+        className="searchInput"
+      />
 
       <div className="pokemonsContainer">
-        {!filtered
-          ? pokemons.map((pokemon, key) => (
-              <SimpleCard key={pokemon.name} pokemon={pokemon} />
-            ))
-          : filteredPokemons.map((pokemon, key) => (
-              <SimpleCard key={pokemon.name} pokemon={pokemon} />
-            ))}
+        {visibleList.map((pokemon,key) => (
+          <SimpleCard key={key} pokemon={pokemon} />
+        ))}
       </div>
-      <div className="btnContainer">
-        <button
-          className={`loadBtn ${loading ? "disabled" : ""}`}
-          onClick={handelLoadMore}
-        >
-          Load More
+
+      {loading && <p>Loading...</p>}
+
+      {nextUrl && !loading && (
+        <button className="loadBtn" onClick={loadPokemons}>
+          Load More Pokémon
         </button>
-      </div>
+      )}
+      {!nextUrl && <p>All Pokémon loaded!</p>}
     </div>
   );
 }
